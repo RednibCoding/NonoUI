@@ -40,6 +40,10 @@ namespace NonoUI.Other
         Point _mouseLocation;
         FormBorderStyle _originalFormBorderStyle;
         ResizeDirection _resizeDirection;
+        int _minWidth = 400;
+        int _minHeight = 400;
+        int _maxWidth;
+        int _maxHeight;
 
         public ResizeBehavior()
         {
@@ -66,6 +70,61 @@ namespace NonoUI.Other
                     form.MouseUp += on_MouseUp;
                     SetClassLong(form.Handle, GCL_STYLE, GetClassLong(form.Handle, GCL_STYLE) | CS_DropSHADOW);
                 }
+            }
+        }
+
+        [Category("Nono")]
+        [Description("The minimum width the target form can have.")]
+        [Browsable(true)]
+        public int MinWidth
+        {
+            get { return _minWidth; }
+            set { 
+                _minWidth = value;
+                if (TargetForm != null)
+                    TargetForm.MinimumSize = new Size(value, TargetForm.MinimumSize.Height);
+            }
+        }
+
+        [Category("Nono")]
+        [Description("The minimum height the target form can have.")]
+        [Browsable(true)]
+        public int MinHeight
+        {
+            get { return _minHeight; }
+            set
+            {
+                _minHeight = value;
+                if (TargetForm != null)
+                    TargetForm.MinimumSize = new Size(TargetForm.MinimumSize.Width, value);
+            }
+        }
+
+        [Category("Nono")]
+        [Description("The maximum width the target form can have.")]
+        [Browsable(true)]
+        public int MaxWidth
+        {
+            get { return _maxWidth; }
+            set
+            {
+                _maxWidth = value;
+                if (TargetForm != null)
+                    TargetForm.MaximumSize = new Size(value, TargetForm.MaximumSize.Height);
+            }
+        }
+
+        [Category("Nono")]
+        [Description("The maximum width the target form can have.")]
+        [Browsable(true)]
+        public int MaxHeight
+        {
+            get { return _maxHeight; }
+            set
+            {
+                _maxHeight = value;
+                if (TargetForm != null)
+                    TargetForm.MaximumSize = new Size(TargetForm.MaximumSize.Width, value);
             }
         }
 
@@ -195,6 +254,12 @@ namespace NonoUI.Other
                 }
             }
 
+            // This is just for safety
+            var minWidth = 50;
+            var minHeight = 50;
+            var oldLeft = form.Left;
+            var oldTop = form.Top;
+
             switch (_resizeDirection)
             {
                 case ResizeDirection.Left:
@@ -212,8 +277,8 @@ namespace NonoUI.Other
                     form.Height = e.Y;
                     break;
                 case ResizeDirection.BottomRight:
-                    form.Width = e.X;
                     form.Height = e.Y;
+                    form.Width = e.X;
                     break;
                 case ResizeDirection.BottomLeft:
                     form.Width = form.Width + _mouseLocation.X - e.X;
@@ -234,6 +299,20 @@ namespace NonoUI.Other
                 case ResizeDirection.None:
                 default:
                     break;
+            }
+
+            if (form.Width < minWidth)
+            {
+                form.Width = minWidth + 1;
+                form.Left = oldLeft;
+                _resizeDirection = ResizeDirection.None;
+            }
+
+            if (form.Height < minHeight)
+            {
+                form.Height = minHeight + 1;
+                form.Top = oldTop;
+                _resizeDirection = ResizeDirection.None;
             }
 
             _targetForm?.Refresh();

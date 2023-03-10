@@ -44,6 +44,10 @@
             // 
             // resizeBehavior1
             // 
+            this.resizeBehavior1.MaxHeight = 0;
+            this.resizeBehavior1.MaxWidth = 0;
+            this.resizeBehavior1.MinHeight = 200;
+            this.resizeBehavior1.MinWidth = 200;
             this.resizeBehavior1.TargetForm = this;
             // 
             // Titlebar
@@ -56,7 +60,7 @@
             this.Titlebar.Dock = System.Windows.Forms.DockStyle.Top;
             this.Titlebar.Location = new System.Drawing.Point(0, 0);
             this.Titlebar.Name = "Titlebar";
-            this.Titlebar.Size = new System.Drawing.Size(853, 75);
+            this.Titlebar.Size = new System.Drawing.Size(1137, 75);
             this.Titlebar.TabIndex = 0;
             this.Titlebar.TargetForm = this;
             // 
@@ -73,7 +77,7 @@
             this.nonoButton3.Image = global::Example.Properties.Resources.user;
             this.nonoButton3.IsToggleable = false;
             this.nonoButton3.IsToggled = false;
-            this.nonoButton3.Location = new System.Drawing.Point(527, 0);
+            this.nonoButton3.Location = new System.Drawing.Point(811, 0);
             this.nonoButton3.Name = "nonoButton3";
             this.nonoButton3.Size = new System.Drawing.Size(83, 75);
             this.nonoButton3.TabIndex = 3;
@@ -91,7 +95,7 @@
             this.controlButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.controlButton3.ForeColor = System.Drawing.Color.White;
-            this.controlButton3.Location = new System.Drawing.Point(616, 0);
+            this.controlButton3.Location = new System.Drawing.Point(900, 0);
             this.controlButton3.Name = "controlButton3";
             this.controlButton3.Size = new System.Drawing.Size(75, 75);
             this.controlButton3.TabIndex = 3;
@@ -106,7 +110,7 @@
             this.controlButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.controlButton2.ForeColor = System.Drawing.Color.White;
-            this.controlButton2.Location = new System.Drawing.Point(697, 0);
+            this.controlButton2.Location = new System.Drawing.Point(981, 0);
             this.controlButton2.Name = "controlButton2";
             this.controlButton2.Size = new System.Drawing.Size(75, 75);
             this.controlButton2.TabIndex = 2;
@@ -121,7 +125,7 @@
             this.controlButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.controlButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.controlButton1.ForeColor = System.Drawing.Color.White;
-            this.controlButton1.Location = new System.Drawing.Point(778, 0);
+            this.controlButton1.Location = new System.Drawing.Point(1062, 0);
             this.controlButton1.Name = "controlButton1";
             this.controlButton1.Size = new System.Drawing.Size(75, 75);
             this.controlButton1.TabIndex = 1;
@@ -139,7 +143,7 @@
             this.nonoButton1.ForeColor = System.Drawing.Color.White;
             this.nonoButton1.IsToggleable = false;
             this.nonoButton1.IsToggled = false;
-            this.nonoButton1.Location = new System.Drawing.Point(646, 452);
+            this.nonoButton1.Location = new System.Drawing.Point(930, 743);
             this.nonoButton1.Name = "nonoButton1";
             this.nonoButton1.Size = new System.Drawing.Size(195, 60);
             this.nonoButton1.TabIndex = 1;
@@ -161,7 +165,7 @@
             this.nonoButton2.ForeColor = System.Drawing.Color.White;
             this.nonoButton2.IsToggleable = false;
             this.nonoButton2.IsToggled = false;
-            this.nonoButton2.Location = new System.Drawing.Point(430, 452);
+            this.nonoButton2.Location = new System.Drawing.Point(714, 743);
             this.nonoButton2.Name = "nonoButton2";
             this.nonoButton2.Size = new System.Drawing.Size(195, 60);
             this.nonoButton2.TabIndex = 2;
@@ -184,8 +188,7 @@
             // 
             // nonoListBox1
             // 
-            this.nonoListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.nonoListBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.nonoListBox1.BorderColor = System.Drawing.Color.LightGray;
             this.nonoListBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
@@ -205,7 +208,7 @@
             this.nonoListBox1.Name = "nonoListBox1";
             this.nonoListBox1.SelectedItemBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.nonoListBox1.SelectedItemTextColor = System.Drawing.Color.White;
-            this.nonoListBox1.Size = new System.Drawing.Size(481, 280);
+            this.nonoListBox1.Size = new System.Drawing.Size(765, 240);
             this.nonoListBox1.TabIndex = 4;
             // 
             // Form1
@@ -213,13 +216,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(853, 524);
+            this.ClientSize = new System.Drawing.Size(1137, 815);
             this.Controls.Add(this.nonoListBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nonoButton2);
             this.Controls.Add(this.nonoButton1);
             this.Controls.Add(this.Titlebar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.MinimumSize = new System.Drawing.Size(200, 200);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Titlebar.ResumeLayout(false);
