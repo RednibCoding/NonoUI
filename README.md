@@ -16,10 +16,10 @@ I did not want to pay huge amounts of money for a Winforms gui library, but i di
 
 # Contribute
 This is suppose to be a community driven modern Winforms UI library, so contributions are very welcome.
-Just create a pull request with a detailed description about what your contributed is for.
+Just create a pull request with a detailed description about what your contribution is for.
 
 I am happy about any contribution, may it be a small bug fix, a new small control or a big fully fledged control like an excel sheet editor (just an example).
 
-This is from the community for the community.
 
-> Note that this project uses the MIT licence, all code you contribute will also be under the MIT license, if you don't agree with that, please don't contribute.
+
+> This is from the community for the community: so NonoUI uses the MIT licence, all code you contribute will also be under the MIT license, if you don't agree with that, please don't contribute.
