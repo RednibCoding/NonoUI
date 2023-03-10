@@ -20,7 +20,7 @@ namespace NonoUI.Controls
             InitializeComponent();
             Height = 50;
             Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
-            BackColor = Color.FromArgb(0, 0, 0, 0);
+            BackColor = Color.FromArgb(255, 128, 128, 255);
             MouseDown += on_MouseDown;
             MouseMove += on_MouseMove;
         }

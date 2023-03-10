@@ -30,11 +30,14 @@ namespace NonoUI.Controls
             InitializeComponent();
             FlatAppearance.BorderSize = 0;
             FlatStyle = FlatStyle.Flat;
-            AutoSizeMode = AutoSizeMode.GrowAndShrink;
-            AutoSize = true;
+            //AutoSizeMode = AutoSizeMode.GrowAndShrink;
+            //AutoSize = true;
             Anchor = AnchorStyles.Top | AnchorStyles.Right;
+            BackColor = Color.FromArgb(255, 128, 128, 255);
+            ForeColor = Color.White;
             Font = _font;
-
+            Width = 50;
+            Height = 50;
             MouseUp += on_MouseUp;
             
         }

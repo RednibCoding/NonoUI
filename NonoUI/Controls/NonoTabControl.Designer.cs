@@ -1,6 +1,6 @@
 ﻿namespace NonoUI.Controls
 {
-    partial class SimpleButton : Button
+    partial class NonoTabControl : TabControl
     {
         /// <summary>
         /// Required designer variable.

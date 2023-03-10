@@ -5,12 +5,35 @@
     <Nullable>enable</Nullable>
     <UseWindowsForms>true</UseWindowsForms>
     <ImplicitUsings>enable</ImplicitUsings>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <Title>NonoUI</Title>
+    <Description>A small and free Winforms UI library</Description>
+    <Copyright>MIT</Copyright>
+    <PackageIcon>logo.png</PackageIcon>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <RepositoryUrl>https://github.com/RednibCoding/NonoUI</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+    <PackageTags>Winforms;Windows Forms;gui;ui;user;interface</PackageTags>
+    <PackageReleaseNotes>First release:
+brings just a few components:
+- ResizeBehavior (on borderless forms)
+- DragPanel (a panel that comes with drag behavior)
+- ControlButton (add minimize, maximaze and close features)
+- NonoButton (stylized button that can also be toggled)
+- NonoTabControl (styleized tab control)
+- NonoListBox (stylized list box)</PackageReleaseNotes>
+    <PackageLicenseFile>license</PackageLicenseFile>
+    <Authors>Rednib</Authors>
+    <Company>Rednib</Company>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
     <None Remove="Controls\Assets\Icons\control_button.png" />
     <None Remove="Controls\Assets\Icons\drag_panel.png" />
     <None Remove="Controls\Assets\Icons\simple_button.png" />
+    <None Remove="Controls\Assets\Icons\tab_control.png" />
+    <None Remove="Controls\Assets\list_box.png" />
     <None Remove="Controls\Assets\rectangle.png" />
     <None Remove="Other\Assets\Icons\resize_behavior.png" />
   </ItemGroup>
@@ -19,7 +42,20 @@
     <EmbeddedResource Include="Controls\Assets\Icons\control_button.png" />
     <EmbeddedResource Include="Controls\Assets\Icons\drag_panel.png" />
     <EmbeddedResource Include="Controls\Assets\Icons\simple_button.png" />
+    <EmbeddedResource Include="Controls\Assets\Icons\list_box.png" />
+    <EmbeddedResource Include="Controls\Assets\Icons\tab_control.png" />
     <EmbeddedResource Include="Other\Assets\Icons\resize_behavior.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="..\license">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+    <None Include="..\README.md">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -35,6 +71,13 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="logo.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
   </ItemGroup>
 
 </Project>

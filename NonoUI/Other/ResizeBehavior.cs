@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace NonoUI.Other
 {
@@ -25,6 +27,15 @@ namespace NonoUI.Other
     [ToolboxBitmap(typeof(ResizeBehavior), "Assets.Icons.resize_behavior.png")]
     public partial class ResizeBehavior : Component
     {
+        // Needed for the drop shadow
+        const int CS_DropSHADOW = 0x20000;
+        const int GCL_STYLE = (-26);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int SetClassLong(IntPtr hwnd, int nIndex, int dwNewLong);
+        [DllImport("user32.dll", CharSet = CharSet.Auto)]
+        public static extern int GetClassLong(IntPtr hwnd, int nIndex);
+
+
         Form? _targetForm;
         Point _mouseLocation;
         FormBorderStyle _originalFormBorderStyle;
@@ -53,6 +64,7 @@ namespace NonoUI.Other
                     form.MouseMove += on_MouseMove;
                     form.MouseDown += on_MouseDown;
                     form.MouseUp += on_MouseUp;
+                    SetClassLong(form.Handle, GCL_STYLE, GetClassLong(form.Handle, GCL_STYLE) | CS_DropSHADOW);
                 }
             }
         }
@@ -75,6 +87,58 @@ namespace NonoUI.Other
             if (form == null) return;
             
             const int margin = 12;
+
+            var left = false;
+            var right = false;
+
+   
+            if (e.X <= margin) // Left border
+            {
+                left = true;
+                Cursor.Current = Cursors.SizeWE;
+            }
+            else if (e.X >= form.ClientSize.Width - margin) // Right border
+            {
+                right = true;
+                Cursor.Current = Cursors.SizeWE;
+            }
+
+            if (e.Y <= margin) // Top border
+            {
+
+                if (left)
+                {
+                    Cursor.Current = Cursors.SizeNWSE;
+                }
+                else if (right)
+                {
+                    Cursor.Current = Cursors.SizeNESW;
+                }
+                else
+                {
+                    Cursor.Current = Cursors.SizeNS;
+                }
+            }
+            else if (e.Y >= form.ClientSize.Height - margin) // Bottom border
+            {
+
+                if (left)
+                {
+                    Cursor.Current = Cursors.SizeNESW;
+                }
+                else if (right)
+                {
+                    Cursor.Current = Cursors.SizeNWSE;
+                }
+                else
+                {
+                    Cursor.Current = Cursors.SizeNS;
+                }
+            }
+            
+
+
+            // ####################################################################################
 
             if (e.Button != MouseButtons.Left) return;
 
@@ -171,7 +235,8 @@ namespace NonoUI.Other
                 default:
                     break;
             }
-           
+
+            _targetForm?.Refresh();
 
         }
 

@@ -1,4 +1,4 @@
-namespace NonoUI_Test
+namespace Example
 {
     internal static class Program
     {

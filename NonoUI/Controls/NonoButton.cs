@@ -11,19 +11,20 @@ using System.Drawing.Drawing2D;
 
 namespace NonoUI.Controls
 {
-    [ToolboxBitmap(typeof(SimpleButton), "Assets.Icons.simple_button.png")]
-    public partial class SimpleButton : Button
+    [ToolboxBitmap(typeof(NonoButton), "Assets.Icons.simple_button.png")]
+    public partial class NonoButton : Button
     {
-        private Color _buttonColor = Color.FromArgb(255, 98, 0, 238);
-        private Color _buttonToggleColor = Color.FromArgb(255, 20, 0, 80);
+        private Color _buttonColor = Color.FromArgb(255, 128, 128, 255);
+        private Color _buttonToggleColor = Color.FromArgb(255, 192, 192, 255);
         private Color _textColor = Color.White;
-        private Font _font = new Font("Sans Serif", 10, FontStyle.Regular);
+        private Color _textToggleColor = Color.White;
+        private Font _font = new Font("Sans Serif", 12, FontStyle.Regular);
         private bool _isToggled = false;
         private bool _isToggleable = false;
         private string _toggleText = string.Empty;
         private string _buttonText = string.Empty;
 
-        public SimpleButton() : base()
+        public NonoButton() : base()
         {
             InitializeComponent();
             BackColor = _buttonColor;
@@ -31,8 +32,8 @@ namespace NonoUI.Controls
             FlatStyle = FlatStyle.Flat;
             ForeColor = _textColor;
             Font = _font;
-            Width = 100;
-            Height = 30;
+            Width = 130;
+            Height = 40;
 
             MouseUp += new MouseEventHandler(on_MouseUp);
         }
@@ -58,6 +59,7 @@ namespace NonoUI.Controls
                 if (_isToggled == true)
                 {
                     BackColor = _buttonToggleColor;
+                    ForeColor = _textToggleColor;
                     if (string.IsNullOrWhiteSpace(_toggleText))
                         _toggleText = Text;
                     var btext = Text;
@@ -67,6 +69,7 @@ namespace NonoUI.Controls
                 else
                 {
                     BackColor = _buttonColor;
+                    ForeColor = _textColor;
                     Text = _buttonText;
                 }
             }
@@ -100,7 +103,7 @@ namespace NonoUI.Controls
         [Description("The text displayed on the button when toggled.")]
         [Browsable(true)]
         [EditorBrowsable(EditorBrowsableState.Always)]
-        public string ToggleText
+        public string TextWhenToggled
         {
             get { return _toggleText; }
             set { _toggleText = value; }
@@ -122,6 +125,15 @@ namespace NonoUI.Controls
         {
             get { return _textColor; }
             set { _textColor = value; ForeColor = value; }
+        }
+
+        [Category("Nono")]
+        [Description("The text color when the button is toggled.")]
+        [Browsable(true)]
+        public Color TextToggleColor
+        {
+            get { return _textToggleColor; }
+            set { _textToggleColor = value; }
         }
 
         private void on_MouseUp(object? sender, MouseEventArgs e)

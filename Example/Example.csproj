@@ -9,9 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Reference Include="NonoUI">
-      <HintPath>..\NonoUI\bin\Debug\net7.0-windows\NonoUI.dll</HintPath>
-    </Reference>
+    <ProjectReference Include="..\NonoUI\NonoUI.csproj" />
   </ItemGroup>
 
 </Project>
