@@ -1,6 +1,6 @@
-﻿namespace NonoUI.Other
+﻿namespace NonoUI.Forms
 {
-    partial class ResizeBehavior
+    partial class NonoForm
     {
         /// <summary>
         /// Required designer variable.

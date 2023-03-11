@@ -1,6 +1,6 @@
 ﻿namespace NonoUI.Controls
 {
-    partial class NonoTabControl : TabControl
+    partial class NonoTextBox
     {
         /// <summary>
         /// Required designer variable.
