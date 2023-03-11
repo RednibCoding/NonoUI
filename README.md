@@ -11,7 +11,7 @@ I know Winforms is a pretty old technology, although it has been updated to the 
 And that's what we love about Winforms.
 
 But Winforms applications doesn't look good, actually they look quite ugly.
-There are a few Winforms gui libraries out there, some are quite expensive and some are closed source one man projects, that are also not free. There are 1 or 2 free gui libraries out there, but either for old .net framework or there are incomplete and buggy as hell.
+There are a few Winforms gui libraries out there, some are quite expensive and some are closed source one man projects, that are also not free. There are 1 or 2 free gui libraries out there, but either for old .net framework or there are incomplete and buggy and most of tham are abandoned.
 I did not want to pay huge amounts of money for a Winforms gui library, but i did not want to rely on a one man (paid), closed source project either. So i looked around to see if there are other people like me who just wanted to have a way to design pretty Winforms applications quickly, and there where quite a few. So i started to work on NonoUI.
 
 # Contribute
