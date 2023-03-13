@@ -1,6 +1,6 @@
 ﻿namespace NonoUI.Controls
 {
-    partial class NonoDragPanel : Panel
+    partial class NonoListBox : ListBox
     {
         /// <summary>
         /// Required designer variable.

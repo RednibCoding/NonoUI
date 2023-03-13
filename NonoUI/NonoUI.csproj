@@ -35,6 +35,7 @@ brings just a few components:
     <None Remove="Controls\Assets\Icons\tab_control.png" />
     <None Remove="Controls\Assets\list_box.png" />
     <None Remove="Controls\Assets\rectangle.png" />
+    <None Remove="Other\Assets\Icons\resize_behavior.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +44,7 @@ brings just a few components:
     <EmbeddedResource Include="Controls\Assets\Icons\simple_button.png" />
     <EmbeddedResource Include="Controls\Assets\Icons\list_box.png" />
     <EmbeddedResource Include="Controls\Assets\Icons\tab_control.png" />
+    <EmbeddedResource Include="Other\Assets\Icons\resize_behavior.png" />
   </ItemGroup>
 
   <ItemGroup>

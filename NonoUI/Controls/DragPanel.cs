@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 
 namespace NonoUI.Controls
 {
-    [ToolboxBitmap(typeof(NonoDragPanel), "Assets.Icons.drag_panel.png")]
-    public partial class NonoDragPanel : Panel
+    [ToolboxBitmap(typeof(DragPanel), "Assets.Icons.drag_panel.png")]
+    public partial class DragPanel : Panel
     {
         Point _mouseLocation;
         Form _targetForm;
 
-        public NonoDragPanel() : base()
+        public DragPanel() : base()
         {
             InitializeComponent();
             Height = 50;
             Anchor = AnchorStyles.Top | AnchorStyles.Right | AnchorStyles.Left;
-            BackColor = Color.Transparent;
+            BackColor = Color.FromArgb(255, 128, 128, 255);
             MouseDown += on_MouseDown;
             MouseMove += on_MouseMove;
         }
