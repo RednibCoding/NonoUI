@@ -3,6 +3,9 @@ NonoUI is a modern community driven Winforms UI library based on .Net 7
 
 ![](readme/screenshot_01.png)
 
+# Souce code
+The source code is hosted on github: https://github.com/RednibCoding/NonoUI/
+
 # Nuget
 You can get the latest nuget package here: https://www.nuget.org/packages/NonoUI/
 
