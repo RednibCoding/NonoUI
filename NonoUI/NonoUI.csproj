@@ -23,7 +23,7 @@ more to come...</PackageReleaseNotes>
     <PackageLicenseFile>license</PackageLicenseFile>
     <Authors>Rednib</Authors>
     <Company>Rednib</Company>
-    <Version>1.0.8</Version>
+    <Version>1.0.9</Version>
   </PropertyGroup>
 
   <ItemGroup>

@@ -40,7 +40,7 @@ namespace NonoUI.Controls
         private void on_MouseUp(object? sender, MouseEventArgs e)
         {
             if (_isDisabled) return;
-            BackgroundImage = _bitmap_normal;
+            BackgroundImage = _bitmap_hover == null ? _bitmap_normal : _bitmap_hover;
             Refresh();
         }
 

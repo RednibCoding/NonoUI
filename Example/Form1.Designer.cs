@@ -224,11 +224,11 @@
             this.nonoImageButton1.Disabled = false;
             this.nonoImageButton1.ImageClicked = global::Example.Properties.Resources.play_now;
             this.nonoImageButton1.ImageDisabled = global::Example.Properties.Resources.play_now_disabled;
-            this.nonoImageButton1.ImageHover = global::Example.Properties.Resources.play_now;
+            this.nonoImageButton1.ImageHover = global::Example.Properties.Resources.play_now_hover;
             this.nonoImageButton1.ImageNormal = global::Example.Properties.Resources.play_now;
             this.nonoImageButton1.Location = new System.Drawing.Point(502, 348);
             this.nonoImageButton1.Name = "nonoImageButton1";
-            this.nonoImageButton1.Size = new System.Drawing.Size(150, 75);
+            this.nonoImageButton1.Size = new System.Drawing.Size(363, 145);
             this.nonoImageButton1.TabIndex = 5;
             this.nonoImageButton1.TabStop = false;
             // 
