@@ -30,16 +30,18 @@
         {
             this.resizeBehavior1 = new NonoUI.Other.ResizeBehavior();
             this.Titlebar = new NonoUI.Controls.DragPanel();
+            this.controlButton3 = new NonoUI.Controls.ControlButton();
+            this.controlButton2 = new NonoUI.Controls.ControlButton();
+            this.controlButton1 = new NonoUI.Controls.ControlButton();
             this.nonoButton3 = new NonoUI.Controls.NonoButton();
             this.nonoButton1 = new NonoUI.Controls.NonoButton();
             this.nonoButton2 = new NonoUI.Controls.NonoButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nonoListBox1 = new NonoUI.Controls.NonoListBox();
-            this.controlButton1 = new NonoUI.Controls.ControlButton();
-            this.controlButton2 = new NonoUI.Controls.ControlButton();
-            this.controlButton3 = new NonoUI.Controls.ControlButton();
+            this.nonoImageButton1 = new NonoUI.Controls.NonoImageButton();
             this.Titlebar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nonoImageButton1)).BeginInit();
             this.SuspendLayout();
             // 
             // resizeBehavior1
@@ -63,6 +65,57 @@
             this.Titlebar.Size = new System.Drawing.Size(1137, 75);
             this.Titlebar.TabIndex = 0;
             this.Titlebar.TargetForm = this;
+            // 
+            // controlButton3
+            // 
+            this.controlButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton3.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton3.ButtonForeColor = System.Drawing.Color.White;
+            this.controlButton3.ControlType = NonoUI.Controls.ControlButton.ButtonType.Minimize;
+            this.controlButton3.FlatAppearance.BorderSize = 0;
+            this.controlButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.controlButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.controlButton3.ForeColor = System.Drawing.Color.White;
+            this.controlButton3.Location = new System.Drawing.Point(900, 0);
+            this.controlButton3.Name = "controlButton3";
+            this.controlButton3.Size = new System.Drawing.Size(75, 75);
+            this.controlButton3.TabIndex = 5;
+            this.controlButton3.UseVisualStyleBackColor = false;
+            // 
+            // controlButton2
+            // 
+            this.controlButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton2.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton2.ButtonForeColor = System.Drawing.Color.White;
+            this.controlButton2.ControlType = NonoUI.Controls.ControlButton.ButtonType.Maximize;
+            this.controlButton2.FlatAppearance.BorderSize = 0;
+            this.controlButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.controlButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.controlButton2.ForeColor = System.Drawing.Color.White;
+            this.controlButton2.Location = new System.Drawing.Point(981, 0);
+            this.controlButton2.Name = "controlButton2";
+            this.controlButton2.Size = new System.Drawing.Size(75, 75);
+            this.controlButton2.TabIndex = 5;
+            this.controlButton2.UseVisualStyleBackColor = false;
+            // 
+            // controlButton1
+            // 
+            this.controlButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.controlButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton1.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.controlButton1.ButtonForeColor = System.Drawing.Color.White;
+            this.controlButton1.ControlType = NonoUI.Controls.ControlButton.ButtonType.Close;
+            this.controlButton1.FlatAppearance.BorderSize = 0;
+            this.controlButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.controlButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.controlButton1.ForeColor = System.Drawing.Color.White;
+            this.controlButton1.Location = new System.Drawing.Point(1062, 0);
+            this.controlButton1.Name = "controlButton1";
+            this.controlButton1.Size = new System.Drawing.Size(75, 75);
+            this.controlButton1.TabIndex = 5;
+            this.controlButton1.UseVisualStyleBackColor = false;
             // 
             // nonoButton3
             // 
@@ -163,56 +216,21 @@
             this.nonoListBox1.Size = new System.Drawing.Size(764, 560);
             this.nonoListBox1.TabIndex = 4;
             // 
-            // controlButton1
+            // nonoImageButton1
             // 
-            this.controlButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlButton1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton1.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton1.ButtonForeColor = System.Drawing.Color.White;
-            this.controlButton1.ControlType = NonoUI.Controls.ControlButton.ButtonType.Close;
-            this.controlButton1.FlatAppearance.BorderSize = 0;
-            this.controlButton1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.controlButton1.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.controlButton1.ForeColor = System.Drawing.Color.White;
-            this.controlButton1.Location = new System.Drawing.Point(1062, 0);
-            this.controlButton1.Name = "controlButton1";
-            this.controlButton1.Size = new System.Drawing.Size(75, 75);
-            this.controlButton1.TabIndex = 5;
-            this.controlButton1.UseVisualStyleBackColor = false;
-            // 
-            // controlButton2
-            // 
-            this.controlButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlButton2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton2.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton2.ButtonForeColor = System.Drawing.Color.White;
-            this.controlButton2.ControlType = NonoUI.Controls.ControlButton.ButtonType.Maximize;
-            this.controlButton2.FlatAppearance.BorderSize = 0;
-            this.controlButton2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.controlButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.controlButton2.ForeColor = System.Drawing.Color.White;
-            this.controlButton2.Location = new System.Drawing.Point(981, 0);
-            this.controlButton2.Name = "controlButton2";
-            this.controlButton2.Size = new System.Drawing.Size(75, 75);
-            this.controlButton2.TabIndex = 5;
-            this.controlButton2.UseVisualStyleBackColor = false;
-            // 
-            // controlButton3
-            // 
-            this.controlButton3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.controlButton3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton3.ButtonBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.controlButton3.ButtonForeColor = System.Drawing.Color.White;
-            this.controlButton3.ControlType = NonoUI.Controls.ControlButton.ButtonType.Minimize;
-            this.controlButton3.FlatAppearance.BorderSize = 0;
-            this.controlButton3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.controlButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.controlButton3.ForeColor = System.Drawing.Color.White;
-            this.controlButton3.Location = new System.Drawing.Point(900, 0);
-            this.controlButton3.Name = "controlButton3";
-            this.controlButton3.Size = new System.Drawing.Size(75, 75);
-            this.controlButton3.TabIndex = 5;
-            this.controlButton3.UseVisualStyleBackColor = false;
+            this.nonoImageButton1.BackColor = System.Drawing.Color.Transparent;
+            this.nonoImageButton1.BackgroundImage = global::Example.Properties.Resources.play_now;
+            this.nonoImageButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.nonoImageButton1.Disabled = false;
+            this.nonoImageButton1.ImageClicked = global::Example.Properties.Resources.play_now;
+            this.nonoImageButton1.ImageDisabled = global::Example.Properties.Resources.play_now_disabled;
+            this.nonoImageButton1.ImageHover = global::Example.Properties.Resources.play_now;
+            this.nonoImageButton1.ImageNormal = global::Example.Properties.Resources.play_now;
+            this.nonoImageButton1.Location = new System.Drawing.Point(502, 348);
+            this.nonoImageButton1.Name = "nonoImageButton1";
+            this.nonoImageButton1.Size = new System.Drawing.Size(150, 75);
+            this.nonoImageButton1.TabIndex = 5;
+            this.nonoImageButton1.TabStop = false;
             // 
             // Form1
             // 
@@ -220,6 +238,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1137, 815);
+            this.Controls.Add(this.nonoImageButton1);
             this.Controls.Add(this.nonoListBox1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.nonoButton2);
@@ -231,6 +250,7 @@
             this.Text = "Form1";
             this.Titlebar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nonoImageButton1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -247,5 +267,6 @@
         private NonoUI.Controls.ControlButton controlButton3;
         private NonoUI.Controls.ControlButton controlButton2;
         private NonoUI.Controls.ControlButton controlButton1;
+        private NonoUI.Controls.NonoImageButton nonoImageButton1;
     }
 }
