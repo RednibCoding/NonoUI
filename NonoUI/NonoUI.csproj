@@ -7,7 +7,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     <Title>NonoUI</Title>
-    <Description>A small and free Winforms UI library</Description>
+    <Description>A small and free Winforms UI library (still wip)
+
+Visit: https://github.com/RednibCoding/NonoUI
+for more informations</Description>
     <Copyright>MIT</Copyright>
     <PackageIcon>logo.png</PackageIcon>
     <PackageReadmeFile>README.md</PackageReadmeFile>
@@ -21,11 +24,13 @@ brings just a few components:
 - ControlButton (add minimize, maximaze and close features)
 - NonoButton (stylized button that can also be toggled)
 - NonoTabControl (styleized tab control)
-- NonoListBox (stylized list box)</PackageReleaseNotes>
+- NonoListBox (stylized list box)
+
+more to come...</PackageReleaseNotes>
     <PackageLicenseFile>license</PackageLicenseFile>
     <Authors>Rednib</Authors>
     <Company>Rednib</Company>
-    <Version>1.0.2</Version>
+    <Version>1.0.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
