@@ -50,8 +50,8 @@ extern "C"
     // UI element functions
     bool nuButton(const char *label, int x, int y, int w, int h);
     void nuLabel(const char *text, int x, int y);
-    float nuVSlider(int x, int y, int width, float min, float max, float step, float initial);
-    float nuHSlider(int x, int y, int width, float min, float max, float step, float initial);
+    float nuVSlider(int x, int y, int h, float min, float max, float step, float initial);
+    float nuHSlider(int x, int y, int w, float min, float max, float step, float initial);
     int nuDropdown(const char *text, int x, int y, int w, int h, const char **options, int numOptions, int numMaxVisibleOptions);
 
 #ifdef __cplusplus
@@ -449,7 +449,7 @@ bool nuCheckbox(const char *text, int x, int y, bool checked)
     return state->isChecked;
 }
 
-float nuHSlider(int x, int y, int width, float min, float max, float step, float initial)
+float nuHSlider(int x, int y, int w, float min, float max, float step, float initial)
 {
     // Validate parameters
     if (min >= max)
@@ -481,7 +481,7 @@ float nuHSlider(int x, int y, int width, float min, float max, float step, float
     int height = 16;
 
     // Check if the mouse is hovering over the slider
-    bool hover = (mouseX >= x && mouseX <= x + width &&
+    bool hover = (mouseX >= x && mouseX <= x + w &&
                   mouseY >= y && mouseY <= y + height);
 
     bool dragging = hover && mouseButtonsHeld[0];
@@ -490,14 +490,14 @@ float nuHSlider(int x, int y, int width, float min, float max, float step, float
     if (dragging)
     {
         float relativeX = mouseX - x;
-        float proportion = fmaxf(0.0f, fminf(1.0f, relativeX / width));
+        float proportion = fmaxf(0.0f, fminf(1.0f, relativeX / w));
         state->value = min + proportion * (max - min);
         state->value = roundf(state->value / step) * step; // Apply step resolution
     }
 
     // Calculate the knob position
     float proportion = (state->value - min) / (max - min);
-    int knobX = x + (int)(proportion * width);
+    int knobX = x + (int)(proportion * w);
 
     // Draw the filled portion of the slider
     nuSetColor(hover ? nuTheme.primaryAccent : nuTheme.primary);
@@ -511,7 +511,7 @@ float nuHSlider(int x, int y, int width, float min, float max, float step, float
 
     // Draw the unfilled portion of the slider
     nuSetColor(hover ? nuTheme.secondaryAccent : nuTheme.secondary);
-    for (int i = knobX; i < x + width; ++i)
+    for (int i = knobX; i < x + w; ++i)
     {
         for (int j = 0; j < height; ++j)
         {
@@ -521,15 +521,15 @@ float nuHSlider(int x, int y, int width, float min, float max, float step, float
 
     // Draw the border
     nuSetColor(nuTheme.border);
-    for (int i = 0; i < width; ++i)
+    for (int i = 0; i < w; ++i)
     {
         nuDrawPixel(x + i, y);              // Top border
         nuDrawPixel(x + i, y + height - 1); // Bottom border
     }
     for (int j = 0; j < height; ++j)
     {
-        nuDrawPixel(x, y + j);             // Left border
-        nuDrawPixel(x + width - 1, y + j); // Right border
+        nuDrawPixel(x, y + j);         // Left border
+        nuDrawPixel(x + w - 1, y + j); // Right border
     }
 
     // Draw the knob
@@ -545,7 +545,7 @@ float nuHSlider(int x, int y, int width, float min, float max, float step, float
     return state->value;
 }
 
-float nuVSlider(int x, int y, int height, float min, float max, float step, float initial)
+float nuVSlider(int x, int y, int h, float min, float max, float step, float initial)
 {
     // Validate parameters
     if (min >= max)
@@ -578,7 +578,7 @@ float nuVSlider(int x, int y, int height, float min, float max, float step, floa
 
     // Check if the mouse is hovering over the slider
     bool hover = (mouseX >= x && mouseX <= x + width &&
-                  mouseY >= y && mouseY <= y + height);
+                  mouseY >= y && mouseY <= y + h);
 
     bool dragging = hover && mouseButtonsHeld[0];
 
@@ -586,20 +586,20 @@ float nuVSlider(int x, int y, int height, float min, float max, float step, floa
     if (dragging)
     {
         float relativeY = mouseY - y;
-        float proportion = fmaxf(0.0f, fminf(1.0f, 1.0f - (relativeY / height))); // Invert proportion
+        float proportion = fmaxf(0.0f, fminf(1.0f, 1.0f - (relativeY / h))); // Invert proportion
         state->value = min + proportion * (max - min);
         state->value = roundf(state->value / step) * step; // Apply step resolution
     }
 
     // Calculate the knob position
     float proportion = (state->value - min) / (max - min);
-    int knobY = y + height - (int)(proportion * height);
+    int knobY = y + h - (int)(proportion * h);
 
     // Draw the filled portion of the slider
     nuSetColor(hover ? nuTheme.primaryAccent : nuTheme.primary);
     for (int i = 0; i < width; ++i)
     {
-        for (int j = knobY; j < y + height; ++j)
+        for (int j = knobY; j < y + h; ++j)
         {
             nuDrawPixel(x + i, j);
         }
@@ -619,10 +619,10 @@ float nuVSlider(int x, int y, int height, float min, float max, float step, floa
     nuSetColor(nuTheme.border);
     for (int i = 0; i < width; ++i)
     {
-        nuDrawPixel(x + i, y);              // Top border
-        nuDrawPixel(x + i, y + height - 1); // Bottom border
+        nuDrawPixel(x + i, y);         // Top border
+        nuDrawPixel(x + i, y + h - 1); // Bottom border
     }
-    for (int j = 0; j < height; ++j)
+    for (int j = 0; j < h; ++j)
     {
         nuDrawPixel(x, y + j);             // Left border
         nuDrawPixel(x + width - 1, y + j); // Right border
