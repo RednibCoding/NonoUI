@@ -50,6 +50,8 @@ extern "C"
     // UI element functions
     bool nuButton(const char *label, int x, int y, int w, int h);
     void nuLabel(const char *text, int x, int y);
+    float nuVSlider(int x, int y, int width, float min, float max, float step, float initial);
+    float nuHSlider(int x, int y, int width, float min, float max, float step, float initial);
     int nuDropdown(const char *text, int x, int y, int w, int h, const char **options, int numOptions, int numMaxVisibleOptions);
 
 #ifdef __cplusplus
@@ -349,8 +351,7 @@ bool nuButton(const char *label, int x, int y, int w, int h)
     int textY = y + (h + textHeight) / 2; // Center vertically
 
     // Draw button label
-    nuSetColor(nuTheme.textPrimary); // White text
-    nuDrawText(label, textX, textY);
+    nuLabel(label, textX, textY);
 
     // Check for button click
     if (hover && mouseButtonsPressed[0])
@@ -443,8 +444,7 @@ bool nuCheckbox(const char *text, int x, int y, bool checked)
     }
 
     // Draw the label next to the checkbox
-    nuSetColor(nuTheme.textPrimary);
-    nuDrawText(text, x + boxSize + boxMargin, y + (boxSize + textHeight) / 2);
+    nuLabel(text, x + boxSize + boxMargin, y + (boxSize + textHeight) / 2);
 
     return state->isChecked;
 }
@@ -698,18 +698,17 @@ int nuDropdown(const char *text, int x, int y, int w, int h, const char **option
     // Draw the button label
     int textX = x + padding;
     int textY = y + (h + textHeight) / 2;
-    nuSetColor(nuTheme.textPrimary);
     if (state->selectedIndex >= 0 && state->selectedIndex < numOptions)
     {
         const char *label = options[state->selectedIndex];
         if (nuTextWidth(label) > maxOptionsWidth - padding)
         {
             _truncateText(label, maxOptionsWidth - padding, _tmpBuffer, TMP_BUFFER_SIZE);
-            nuDrawText(_tmpBuffer, textX, textY);
+            nuLabel(_tmpBuffer, textX, textY);
         }
         else
         {
-            nuDrawText(label, textX, textY);
+            nuLabel(label, textX, textY);
         }
     }
     else
@@ -717,11 +716,11 @@ int nuDropdown(const char *text, int x, int y, int w, int h, const char **option
         if (nuTextWidth(text) > maxOptionsWidth - padding)
         {
             _truncateText(text, maxOptionsWidth - padding, _tmpBuffer, TMP_BUFFER_SIZE);
-            nuDrawText(_tmpBuffer, textX, textY);
+            nuLabel(_tmpBuffer, textX, textY);
         }
         else
         {
-            nuDrawText(text, textX, textY);
+            nuLabel(text, textX, textY);
         }
     }
 
@@ -797,15 +796,14 @@ int nuDropdown(const char *text, int x, int y, int w, int h, const char **option
             // Draw the option text
             int textX = x + padding;
             int textY = optionY + (optionHeight + textHeight) / 2;
-            nuSetColor(nuTheme.textPrimary);
             if (nuTextWidth(options[i]) > maxOptionsWidth)
             {
                 _truncateText(options[i], w - padding * 2, _tmpBuffer, TMP_BUFFER_SIZE);
-                nuDrawText(_tmpBuffer, textX, textY);
+                nuLabel(_tmpBuffer, textX, textY);
             }
             else
             {
-                nuDrawText(options[i], textX, textY);
+                nuLabel(options[i], textX, textY);
             }
 
             // Handle option click
